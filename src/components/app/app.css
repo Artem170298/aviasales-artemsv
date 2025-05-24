@@ -1,0 +1,11 @@
+.app-block {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+.app-container {
+    display: flex;
+    border: 1px solid red;
+}
