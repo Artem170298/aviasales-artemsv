@@ -5,9 +5,9 @@ import './ticket-list.css';
 
 export default function TicketList() {
   return (
-    <div>
+    <div className="ticket-list">
       <Ticket />
-      <button>Показать еще 5 билетов!</button>
+      <button className="show-more-button">Показать еще 5 билетов!</button>
     </div>
   );
 }

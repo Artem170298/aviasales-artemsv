@@ -1,0 +1,15 @@
+.checkbox-div {
+    width: 232px;
+    height: 40px;
+    border: 1px solid green;
+    padding: 5px 20px;
+    padding-right: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0px;
+
+}
