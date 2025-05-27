@@ -1,15 +1,36 @@
 .checkbox-div {
     width: 232px;
-    height: 40px;
+    height: 50px;
     border: 1px solid green;
     padding: 5px 20px;
     padding-right: 0;
     box-sizing: border-box;
-    margin: 0;
+    margin: -1px 0 -1px 0;
+    display: flex;
+    align-items: center;
     font-family: Open Sans;
     font-weight: 400;
     font-size: 13px;
     line-height: 20px;
     letter-spacing: 0px;
+    vertical-align: middle;
 
+}
+
+/* Для изменения цвета галочки */
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: white;
+    border-color: #9ABBCE
+}
+
+/* Для изменения цвета галочки */
+.ant-checkbox-checked .ant-checkbox-inner::after {
+    border-color: #2196F3;
+
+}
+
+Для hover состояния .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner {
+    border-color: #2196F3;
+    background-color: white;
 }
