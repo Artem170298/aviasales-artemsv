@@ -1,24 +1,58 @@
+/* eslint-disable no-shadow */
 // eslint-disable-next-line default-param-last
-const reducer = (state = 0, action) => {
-  //   if (action.type === 'INC') {
-  //     return state + 1;
-  //   }
-  //   if (state === undefined) {
-  //     return 0;
-  //   }
+import { configureStore, bindActionCreators } from '@reduxjs/toolkit';
+import reducer from './reducer';
+// import { inc, dec, rnd } from './actions';
+import * as actions from './actions';
 
-  switch (action.type) {
-    case 'INC':
-      return state + 1;
-    default:
-      return state;
-  }
-};
+const store = configureStore({
+  reducer,
+});
 
-let state = reducer(undefined, {});
+const { dispatch } = store;
 
-state = reducer(state, { type: 'INC' });
-console.log(state);
+// const bindActionCreator = //самописная функция
+//   (creator, dispatch) =>
+//   (...args) => {
+//     dispatch(creator(...args));
+//   };
 
-state = reducer(state, { type: 'INC' });
-console.log(state);
+// bindActionCreators - функция от redux
+
+const payload = Math.floor(Math.random() * 10);
+
+const { inc, dec, rnd } = bindActionCreators(
+  // способ привязки сразу нескольких функций
+  actions,
+  dispatch
+);
+
+// const { incDispatch, decDispatch, rndDispatch } = bindActionCreators(
+//   // способ привязки сразу нескольких функций
+//   { incDispatch: inc, decDispatch: dec, rndDispatch: rnd },
+//   dispatch
+// );
+// const decDispatch = bindActionCreators(dec, dispatch);
+// const rndDispatch = bindActionCreators(rnd, dispatch);
+
+store.subscribe(() => {
+  console.log(store.getState());
+});
+// incDispatch();
+inc(); // не оригинальные функции а с привязкой к dispatch
+
+// dispatch(inc());
+// incDispatch();
+inc();
+// // dispatch(inc());
+// incDispatch();
+inc();
+// // dispatch(dec());
+// decDispatch();
+dec();
+// // dispatch(rnd(payload));
+// rndDispatch(payload);
+rnd(payload);
+// // dispatch(dec());
+// decDispatch();
+dec();

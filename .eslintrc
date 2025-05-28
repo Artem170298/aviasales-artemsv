@@ -23,6 +23,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "default-param-last": "off",
         "class-methods-use-this": "off",
         "prettier/prettier": [
             "error",
