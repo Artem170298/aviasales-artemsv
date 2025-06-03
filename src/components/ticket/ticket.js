@@ -1,5 +1,5 @@
 import React from 'react';
-import firmLogo from './71c173df6bcd457cb80cd1d82aae040e2504746e.png';
+
 import InfoBlock from '../info-block';
 
 import './ticket.css';

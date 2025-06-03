@@ -6,6 +6,9 @@ import {
   FETCH_TICKETS_COMPLETE,
   SET_ACTIVE_FILTERS,
   SET_FILTERED_TICKETS,
+  SET_SORT_BY_PRICE,
+  SET_SORT_BY_DURATION,
+  SET_SORT_BY_OPTIMAL,
 } from './actions';
 
 const initialState = {
@@ -16,10 +19,20 @@ const initialState = {
   loading: false,
   error: null,
   isComplete: false,
+  sortBy: '',
 };
 
 export default function ticketsReducer(state = initialState, action) {
   switch (action.type) {
+    case SET_SORT_BY_PRICE:
+      return { ...state, sortBy: 'price' };
+
+    case SET_SORT_BY_DURATION:
+      return { ...state, sortBy: 'duration' };
+
+    case SET_SORT_BY_OPTIMAL:
+      return { ...state, sortBy: 'optimal' };
+
     case SET_SEARCH_ID:
       return { ...state, searchId: action.payload };
 

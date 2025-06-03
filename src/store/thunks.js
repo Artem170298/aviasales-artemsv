@@ -52,7 +52,7 @@ export const fetchTickets = () => async (dispatch, getState) => {
         const data = await response.json();
         dispatch(fetchTicketsSuccess(data.tickets));
         //------------------------------
-        console.log(data.tickets);
+
         if (data.tickets.length === 0) dispatch(fetchTicketsComplete());
         //--------------------------
         dispatch(applyFilters());

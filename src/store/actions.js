@@ -7,6 +7,9 @@ export const FETCH_TICKETS_FAILURE = 'FETCH_TICKETS_FAILURE';
 export const FETCH_TICKETS_COMPLETE = 'FETCH_TICKETS_COMPLETE';
 export const SET_ACTIVE_FILTERS = 'SET_ACTIVE_FILTERS';
 export const SET_FILTERED_TICKETS = 'SET_FILTERED_TICKETS';
+export const SET_SORT_BY_PRICE = 'SET_SORT_BY_PRICE';
+export const SET_SORT_BY_DURATION = 'SET_SORT_BY_DURATION';
+export const SET_SORT_BY_OPTIMAL = 'SET_SORT_BY_OPTIMAL';
 
 export const setSearchId = (searchId) => ({ type: SET_SEARCH_ID, payload: searchId });
 export const fetchTicketsRequest = () => ({ type: FETCH_TICKETS_REQUEST });
@@ -27,3 +30,7 @@ export const setFilteredTickets = (tickets) => ({
   type: SET_FILTERED_TICKETS,
   payload: tickets,
 });
+
+export const setSortByPrice = () => ({ type: SET_SORT_BY_PRICE });
+export const setSortByDuration = () => ({ type: SET_SORT_BY_DURATION });
+export const setSortByOptimal = () => ({ type: SET_SORT_BY_OPTIMAL });

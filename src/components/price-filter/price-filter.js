@@ -1,5 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setSortByPrice, setSortByDuration, setSortByOptimal } from '../../store/actions';
 
 import './price-filter.css';
 
@@ -8,9 +9,15 @@ export default function PriceFilter() {
 
   return (
     <div className="buttons-div">
-      <button className="button-filt">Самый дешевый</button>
-      <button className="button-filt">Самый быстрый</button>
-      <button className="button-filt">Оптимальный</button>
+      <button className="button-filt" onClick={() => dispatch(setSortByPrice())}>
+        Самый дешевый
+      </button>
+      <button className="button-filt" onClick={() => dispatch(setSortByDuration())}>
+        Самый быстрый
+      </button>
+      <button className="button-filt" onClick={() => dispatch(setSortByOptimal())}>
+        Оптимальный
+      </button>
     </div>
   );
 }
